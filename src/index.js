@@ -29,9 +29,6 @@ window.setInterval(function () {
       "px)rotateZ(" +
       Math.cos(i + degreeToRad(animationCycle * frequency)) * pixelOffset +
       "deg)";
-    console.log(
-      Math.sin(i + degreeToRad(animationCycle * frequency)) * pixelOffset
-    );
     animationCycle -= 1;
   }
 }, 15);

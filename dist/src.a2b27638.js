@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./Milton_Two.otf":[["Milton_Two.96404ac9.otf","src/Milton_Two.otf"],"src/Milton_Two.otf"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/index.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 require("./styles.css");
@@ -214,7 +214,6 @@ window.setInterval(function () {
   for (var i = 0; i < mailTElements.length; i++) {
     mailTElements[i].style.marginLeft = i * 16 + "px";
     mailTElements[i].style.transform = "translateY(" + Math.sin(i + degreeToRad(animationCycle * frequency)) * pixelOffset + "px)rotateZ(" + Math.cos(i + degreeToRad(animationCycle * frequency)) * pixelOffset + "deg)";
-    console.log(Math.sin(i + degreeToRad(animationCycle * frequency)) * pixelOffset);
     animationCycle -= 1;
   }
 }, 15);
@@ -262,7 +261,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50842" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51587" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

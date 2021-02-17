@@ -1,7 +1,3 @@
-@font-face {
-  font-family: "m";
-  src: url("/Milton_Two.96404ac9.otf");
-}
 * {
   box-sizing: border-box;
 }
@@ -36,11 +32,8 @@ body {
   border-bottom: 1px solid black;
 }
 #title {
-  font-family: "m";
-  font-size: 9vw;
-  line-height: 9vw;
-  text-align: center;
   display: inline-block;
+  width: 36vw;
   position: absolute;
   margin: 1vw;
 }
