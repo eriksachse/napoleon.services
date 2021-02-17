@@ -52,15 +52,15 @@ for (var row = 0; row < 40; row++) {
   }
 }
 
-function loop1() {
-  setTimeout(() => {
-    var randomItem =
-      tileElements[Math.floor(Math.random() * tileElements.length)];
-    console.log(randomItem);
-    randomItem.style.loop1();
-  }, 5000);
-}
-loop1();
+// function loop1() {
+//   setTimeout(() => {
+//     var randomItem =
+//       tileElements[Math.floor(Math.random() * tileElements.length)];
+//     console.log(randomItem);
+//     randomItem.style.loop1();
+//   }, 5000);
+// }
+// loop1();
 
 var windowH = window.innerHeight;
 var tilesH = tiles.offsetHeight;
