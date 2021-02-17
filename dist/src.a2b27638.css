@@ -9,6 +9,20 @@ body {
   font-size: 26px;
   margin: 0;
   /* font-family: "w"; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a,
+a:link {
+  color: blue;
+  /* text-decoration: none; */
+}
+a:visited {
+  color: magenta;
+}
+a:link:active,
+a:visited:active {
+  color: magenta;
 }
 .grid {
   display: grid;
@@ -16,8 +30,6 @@ body {
   position: relative;
   opacity: 0;
   animation: fadein 2s ease forwards;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 @keyframes fadein {
   50% {
@@ -65,6 +77,7 @@ p:first-child {
   margin: 0 8px 0 0;
   width: 24px;
   height: 24px;
+  font-style: italic;
 }
 #mail-text span {
   position: absolute;
