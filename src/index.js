@@ -33,20 +33,37 @@ window.setInterval(function () {
   }
 }, 15);
 
-const tiles = document.getElementById("tiles");
-var elements = tiles.childNodes;
-
+var tiles = document.getElementById("tiles");
+var tileElements = [];
 tiles.innerHTML = "";
 var count = 0;
 for (var row = 0; row < 40; row++) {
-  for (var column = 0; column < 4; column++) {
+  for (var column = 0; column < 10; column++) {
     count++;
     var div = document.createElement("div");
     // div.style.fontSize = "8px";
     div.style.position = "absolute";
-    div.style.left = row * 2.5 + "vw";
+    tileElements.push(div);
+    // position(div, column, row);
     div.style.top = column * 2.5 + "vw";
+    div.style.left = row * 2.5 + "vw";
 
     tiles.appendChild(div);
   }
 }
+
+function loop1() {
+  setTimeout(() => {
+    var randomItem =
+      tileElements[Math.floor(Math.random() * tileElements.length)];
+    console.log(randomItem);
+    randomItem.style.loop1();
+  }, 5000);
+}
+loop1();
+
+var windowH = window.innerHeight;
+var tilesH = tiles.offsetHeight;
+console.log(tilesH);
+var intro = document.getElementById("intro");
+intro.style.height = windowH - tilesH + "px";

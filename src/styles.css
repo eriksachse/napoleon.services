@@ -1,13 +1,18 @@
+@font-face {
+  font-family: "w";
+  src: url("SuisseWorks-Regular.otf");
+}
 * {
   box-sizing: border-box;
 }
 body {
   font-size: 26px;
   margin: 0;
+  /* font-family: "w"; */
 }
 .grid {
   display: grid;
-  grid-template-columns: 25vw auto;
+  grid-template-columns: 260px auto;
   position: relative;
   opacity: 0;
   animation: fadein 2s ease forwards;
@@ -22,7 +27,7 @@ body {
     opacity: 1;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .grid {
     grid-template-columns: auto;
   }
@@ -31,20 +36,22 @@ body {
   padding: 12px;
   border-bottom: 1px solid black;
 }
+section:first-child {
+  border-right: 1px solid black;
+}
 #title {
   display: inline-block;
   width: 36vw;
   position: absolute;
   margin: 1vw;
 }
-input {
-  position: absolute;
-}
-.menu {
-  border: 1px solid black;
-  padding: 4px;
-  display: inline-block;
-  margin: 12px 0 0px 0;
+@media only screen and (max-width: 600px) {
+  #title {
+    width: 100vw;
+  }
+  #video {
+    display: none;
+  }
 }
 p:first-child {
   margin-top: 0;
@@ -59,17 +66,11 @@ p:first-child {
   width: 24px;
   height: 24px;
 }
-hr {
-  border: none;
-  border-bottom: 1px solid black;
-}
 #mail-text span {
   position: absolute;
 }
 #tiles {
-  top: 0;
-  left: 0;
-  height: 10vw;
+  height: 25vw;
 }
 #tiles div {
   border-right: 1px solid black;
