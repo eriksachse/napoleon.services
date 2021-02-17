@@ -1,0 +1,86 @@
+@font-face {
+  font-family: "m";
+  src: url("Milton_Two.otf");
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 26px;
+  margin: 0;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 25vw auto;
+  position: relative;
+  opacity: 0;
+  animation: fadein 2s ease forwards;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@keyframes fadein {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .grid {
+    grid-template-columns: auto;
+  }
+}
+.grid section {
+  padding: 12px;
+  border-bottom: 1px solid black;
+}
+#title {
+  font-family: "m";
+  font-size: 9vw;
+  line-height: 9vw;
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  margin: 1vw;
+}
+input {
+  position: absolute;
+}
+.menu {
+  border: 1px solid black;
+  padding: 4px;
+  display: inline-block;
+  margin: 12px 0 0px 0;
+}
+p:first-child {
+  margin-top: 0;
+}
+.e {
+  border: 1px solid black;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 24px;
+  margin: 0 8px 0 0;
+  width: 24px;
+  height: 24px;
+}
+hr {
+  border: none;
+  border-bottom: 1px solid black;
+}
+#mail-text span {
+  position: absolute;
+}
+#tiles {
+  top: 0;
+  left: 0;
+  height: 10vw;
+}
+#tiles div {
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 2.5vw;
+  height: 2.5vw;
+}
