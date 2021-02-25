@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "b";
+  src: url("./fonts/BradfordMonoLL-Regular.otf");
+}
+html,
+body {
+  margin: 0;
+  font-family: "b", "Times New Roman", Times, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 24px;
+  overflow: hidden;
+}
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+#app {
+  padding: 12px;
+}
+#title {
+  display: inline-block;
+  /* text-transform: uppercase; */
+  font-size: 48px;
+}
+.bar {
+  transition: width 0.6s ease;
+}
+.bar-away {
+  width: 0px !important;
+}
+#mail {
+  text-decoration: underline;
+  cursor: pointer;
+  /* border-bottom: 1px solid black; */
+}
