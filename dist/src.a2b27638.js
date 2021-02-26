@@ -35333,9 +35333,60 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+var h1 = document.getElementsByClassName("element");
+var colors = ["blue", "red", "cyan", "magenta", "yellow", "green"];
+
+for (var i = 0; i < h1.length; i++) {
+  var text = h1[i].textContent.split("");
+  var result = "";
+  text.forEach(function (char) {
+    // Append a new span only if the current char is not a space
+    result += "<span>" + char + "</span>";
+  });
+  h1[i].innerHTML = result;
+  var spans = h1[i].querySelectorAll("span");
+
+  for (var is = 0; is < spans.length; is++) {
+    // console.log(spans[is]);
+    spans[is].addEventListener("mouseenter", function () {
+      var _this = this;
+
+      var randomColor = colors[Math.floor(Math.random() * colors.length)];
+      this.style.color = randomColor;
+      setTimeout(function () {
+        _this.style.color = "black";
+      }, 1000);
+    });
+  }
+} // const a = document.getElementsByTagName("a");
+// // console.log(a);
+// for (var ia = 0; ia < a.length; ia++) {
+//   let text = a[ia].textContent.split("");
+//   let result = "";
+//   text.forEach(function (char) {
+//     // Append a new span only if the current char is not a space
+//     result += "<span>" + char + "</span>";
+//   });
+//   a[ia].innerHTML = result;
+//   var spansa = a[ia].querySelectorAll("span");
+//   for (var is = 0; is < spansa.length; is++) {
+//     var offsetLeft = spansa[is].offsetLeft;
+//     console.log(spansa[is], offsetLeft);
+//     // spansa[is].style.left = offsetLeft + "px";
+//     spansa[is].style.position = "relative";
+//     spansa[is].addEventListener("mouseenter", function () {
+//       var randomColor = colors[Math.floor(Math.random() * colors.length)];
+//       this.style.transform = "translateX(10px)";
+//       setTimeout(() => {
+//         this.style.color = "black";
+//       }, 1000);
+//     });
+//   }
+// }
+
+
 var elements = document.getElementsByClassName("element");
-Array.prototype.forEach.call(elements, function (el, i) {
-  console.log(el, i);
+Array.prototype.forEach.call(elements, function (el, i) {// console.log(el, i);
 });
 var mail = document.getElementById("mail");
 mail.addEventListener("click", function () {
@@ -35346,7 +35397,7 @@ var frustumSize = 1000;
 var aspect = window.innerWidth / window.innerHeight;
 var camera = new THREE.OrthographicCamera(frustumSize * aspect / -2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / -2, 1, 2000);
 camera.position.z = 600;
-camera.position.y = 400;
+camera.position.y = 300;
 camera.lookAt(scene.position);
 var renderer = new THREE.WebGLRenderer({
   alpha: true
@@ -35388,12 +35439,7 @@ cylinderWireframe.position.y = 100; // scene.add(cylinderWireframe);
 //
 
 var lineGeometry = new THREE.BufferGeometry();
-var vertices = new Float32Array([// lines
-0.0, 200.0, 100.0, 0.0, 0.0, 100.0, -70.7107, 0.0, 70.7107, -70.7107, 200.0, 70.7107, 70.7107, 0.0, 70.7107, 70.7107, 200.0, 70.7107, 100.0, 200.0, 0.0, 100.0, 0.0, 0.0, 0.0, 200.0, -100.0, 0.0, 0.0, -100.0, -100.0, 200.0, 0.0, -100.0, 0.0, 0.0, -70.7107, 0.0, -70.7107, -70.7107, 200.0, -70.7107, 70.7107, 0.0, -70.7107, 70.7107, 200.0, -70.7107, // lines
-0.0, 200.0, 100, 0.0, 200.0, 0, 70.7107, 200.0, 70.7107, 0, 200.0, 0, -70.7107, 200.0, 70.7107, 0, 200.0, 0, 70.7107, 200.0, 70.7107, 70.7107, 200.0, 70.7107, 100.0, 200.0, 0.0, 0.0, 200.0, 0.0, 0.0, 200.0, -100.0, 0.0, 200.0, 0.0, -100.0, 200.0, 0.0, 0.0, 200.0, 0.0, -70.7107, 200.0, -70.7107, 0, 200.0, 0, 70.7107, 200.0, -70.7107, 0, 200.0, 0, // outer circle
-0.0, 200.0, 100, 70.7107, 200.0, 70.7107, 70.7107, 200.0, 70.7107, 100.0, 200.0, 0, 100.0, 200.0, 0, 70.7107, 200.0, -70.7107, 70.7107, 200.0, -70.7107, 0, 200.0, -100, 0.0, 200.0, -100, -70.7107, 200.0, -70.7107, -70.7107, 200.0, -70.7107, -100.0, 200.0, 0, -100.0, 200.0, 0, -70.7107, 200.0, 70.7107, -70.7107, 200.0, 70.7107, 0, 200.0, 100, // middle circle
-0.0, 200.0, 86.6025, 61.2372, 200.0, 61.2372, 61.2372, 200.0, 61.2372, 86.6025, 200.0, 0, 86.6025, 200.0, 0, 61.2372, 200.0, -61.2372, 61.2372, 200.0, -61.2372, 0, 200.0, -86.6025, 0.0, 200.0, -86.6025, -61.2372, 200.0, -61.2372, -61.2372, 200.0, -61.2372, -86.6025, 200.0, 0, -86.6025, 200.0, 0, -61.2372, 200.0, 61.2372, -61.2372, 200.0, 61.2372, 0, 200.0, 86.6025, // inner circle
-0.0, 200.0, 50.0, 35.3553, 200.0, 35.3553, 35.3553, 200.0, 35.3553, 50.0, 200.0, 0, 50.0, 200.0, 0, 35.3553, 200.0, -35.3553, 35.3553, 200.0, -35.3553, 0, 200.0, -50.0, 0.0, 200.0, -50.0, -35.3553, 200.0, -35.3553, -35.3553, 200.0, -35.3553, -50.0, 200.0, 0, -50.0, 200.0, 0, -35.3553, 200.0, 35.3553, -35.3553, 200.0, 35.3553, 0, 200.0, 50.0]);
+var vertices = new Float32Array([0, 200, 100, 0, 0, 100, -70.7107, 0, 70.7107, -70.7107, 200, 70.7107, 70.7107, 0, 70.7107, 70.7107, 200, 70.7107, 100, 200, 0, 100, 0, 0, 0, 200, -100, 0, 0, -100, -100, 200, 0, -100, 0, 0, -70.7107, 0, -70.7107, -70.7107, 200, -70.7107, 70.7107, 0, -70.7107, 70.7107, 200, -70.7107, 0, 200, 100, 0, 200, 0, 70.7107, 200, 70.7107, 0, 200, 0, -70.7107, 200, 70.7107, 0, 200, 0, 70.7107, 200, 70.7107, 70.7107, 200, 70.7107, 100, 200, 0, 0, 200, 0, 0, 200, -100, 0, 200, 0, -100, 200, 0, 0, 200, 0, -70.7107, 200, -70.7107, 0, 200, 0, 70.7107, 200, -70.7107, 0, 200, 0, 0, 200, 100, 70.7107, 200, 70.7107, 70.7107, 200, 70.7107, 100, 200, 0, 100, 200, 0, 70.7107, 200, -70.7107, 70.7107, 200, -70.7107, 0, 200, -100, 0, 200, -100, -70.7107, 200, -70.7107, -70.7107, 200, -70.7107, -100, 200, 0, -100, 200, 0, -70.7107, 200, 70.7107, -70.7107, 200, 70.7107, 0, 200, 100, 0, 200, 86.6025, 61.2372, 200, 61.2372, 61.2372, 200, 61.2372, 86.6025, 200, 0, 86.6025, 200, 0, 61.2372, 200, -61.2372, 61.2372, 200, -61.2372, 0, 200, -86.6025, 0, 200, -86.6025, -61.2372, 200, -61.2372, -61.2372, 200, -61.2372, -86.6025, 200, 0, -86.6025, 200, 0, -61.2372, 200, 61.2372, -61.2372, 200, 61.2372, 0, 200, 86.6025, 0, 200, 50, 35.3553, 200, 35.3553, 35.3553, 200, 35.3553, 50, 200, 0, 50, 200, 0, 35.3553, 200, -35.3553, 35.3553, 200, -35.3553, 0, 200, -50, 0, 200, -50, -35.3553, 200, -35.3553, -35.3553, 200, -35.3553, -50, 200, 0, -50, 200, 0, -35.3553, 200, 35.3553, -35.3553, 200, 35.3553, 0, 200, 50]);
 lineGeometry.setAttribute("position", new THREE.BufferAttribute(vertices, 3));
 var lineSegments = new THREE.LineSegments(lineGeometry, new THREE.LineDashedMaterial({
   color: 0x000000,
@@ -35419,9 +35465,7 @@ var animate = function animate() {
 
   lineSegments.rotation.y += 0.01; // circle.rotation.z += 0.01;
 
-  cylinderWireframe.rotation.y += 0.01; // lineMesh.rotation.y += 0.01;
-  // boxSegments.rotation.y += 0.01;
-
+  cylinderWireframe.rotation.y += 0.01;
   renderer.render(scene, camera);
 };
 
@@ -35492,7 +35536,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56078" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65288" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

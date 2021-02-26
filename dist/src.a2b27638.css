@@ -9,7 +9,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 24px;
-  overflow: hidden;
 }
 canvas {
   position: fixed;
@@ -17,24 +16,40 @@ canvas {
   left: 0;
   pointer-events: none;
 }
-#app {
+main,
+footer {
   padding: 12px;
 }
 #title {
   display: inline-block;
-  /* text-transform: uppercase; */
   font-size: 48px;
 }
-.bar {
-  transition: width 0.6s ease;
+a {
+  color: black;
 }
-.bar-away {
-  width: 0px !important;
+a:hover,
+#mail:hover {
+  color: grey;
+}
+.description {
+  font-size: 12px;
+}
+.type {
+  margin: 22px 0 0 0;
 }
 #mail {
   text-decoration: underline;
   cursor: pointer;
   /* border-bottom: 1px solid black; */
+}
+footer {
+}
+footer a {
+  font-size: 12px;
+  color: lightgrey;
+}
+span {
+  transition: color 0.2s ease;
 }
 
 
