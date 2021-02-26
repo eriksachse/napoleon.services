@@ -381,7 +381,13 @@ const boxSegments = new THREE.LineSegments(
 boxSegments.computeLineDistances();
 boxSegments.rotation.y = Math.PI / 4;
 scene.add(boxSegments);
-
+document.addEventListener("mousemove", onDocumentMouseMove);
+var mouseX = 0,
+  mouseY = 0;
+function onDocumentMouseMove(event) {
+  mouseX = (event.clientX - window.innerWidth / 2) / 2;
+  mouseY = (event.clientY - window.innerHeight / 2) / 2;
+}
 const animate = function () {
   requestAnimationFrame(animate);
 
@@ -390,6 +396,11 @@ const animate = function () {
   lineSegments.rotation.y += 0.01;
   // circle.rotation.z += 0.01;
   cylinderWireframe.rotation.y += 0.01;
+
+  camera.position.x += (mouseX - camera.position.x) * 0.05;
+  camera.position.y += (-mouseY - camera.position.y) * 0.05;
+
+  camera.lookAt(scene.position);
 
   renderer.render(scene, camera);
 };
