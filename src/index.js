@@ -98,7 +98,7 @@ scene.add(sphereMesh);
 
 // sphere wireframe
 var geo = new THREE.EdgesGeometry(sphereMesh.geometry); // or WireframeGeometry
-var mat = new THREE.LineBasicMaterial({ color: 0x000000, linewidth: 10 });
+var mat = new THREE.LineBasicMaterial({ color: 0x000000, linewidth: 1 });
 var wireframe = new THREE.LineSegments(geo, mat);
 sphereMesh.add(wireframe);
 
