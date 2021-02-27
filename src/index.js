@@ -385,8 +385,8 @@ document.addEventListener("mousemove", onDocumentMouseMove);
 var mouseX = 0,
   mouseY = 0;
 function onDocumentMouseMove(event) {
-  mouseX = (event.clientX - window.innerWidth / 2) / 2;
-  mouseY = (event.clientY - window.innerHeight / 2) / 2;
+  mouseX = (event.clientX - window.innerWidth / 2) / 20;
+  mouseY = (event.clientY - window.innerHeight / 2) / 20;
 }
 const animate = function () {
   requestAnimationFrame(animate);
@@ -398,7 +398,7 @@ const animate = function () {
   cylinderWireframe.rotation.y += 0.01;
 
   camera.position.x += (mouseX - camera.position.x) * 0.05;
-  camera.position.y += (-mouseY - camera.position.y) * 0.05;
+  camera.position.y += (-mouseY - camera.position.y + 400) * 0.05;
 
   camera.lookAt(scene.position);
 
